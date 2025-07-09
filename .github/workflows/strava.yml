@@ -13,6 +13,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Cache notified.json
+        id: cache-notified
+        uses: actions/cache@v3
+        with:
+          path: notified.json
+          key: notified-json-${{ runner.os }}
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -33,3 +40,10 @@ jobs:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
           EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
+
+      - name: Save notified.json cache
+        if: steps.cache-notified.outputs.cache-hit != 'true'
+        uses: actions/cache@v3
+        with:
+          path: notified.json
+          key: notified-json-${{ runner.os }}

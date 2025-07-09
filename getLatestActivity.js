@@ -26,7 +26,15 @@ async function getLatestActivity() {
     const notifiedPath = path.resolve(__dirname, "notified.json");
     let notified = [];
     if (fs.existsSync(notifiedPath)) {
-      notified = JSON.parse(fs.readFileSync(notifiedPath, "utf-8"));
+      try {
+        notified = JSON.parse(fs.readFileSync(notifiedPath, "utf-8"));
+      } catch (err) {
+        console.error("Failed to parse notified.json:", err);
+        notified = []; //
+      }
+    } else {
+      // file does not exist, create empty file
+      fs.writeFileSync(notifiedPath, JSON.stringify([]));
     }
 
     // check if already notified
