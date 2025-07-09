@@ -13,11 +13,10 @@
 
 ## 📌 Features
 
-- **Strava API integration** with OAuth2 to securely access public/private user data
-- Automatically fetches latest activity and kudos count every 24 hours via **scheduled GitHub Actions**
+- **Strava API integration** using OAuth2 to access public/private user data with token management
+- Automatically fetches latest activity and kudos count every 24 hours via **scheduled GitHub Actions workflow**
 - Sends randomized, personalized email notifications to multiple recipients using Nodemailer
-- Tracks previously notified activities using persistent caching to avoid duplicate emails
-- **Fully automated CI/CD deployment** pipeline with GitHub Actions
+- Implemented activity tracking system to prevent duplicate notifications across automated runs
 
 ---
 
@@ -29,13 +28,13 @@
 
 ## 🛠️ Tech Stack
 
-| Category            | Technology          |
-| ------------------- | ------------------- |
-| **Backend**         | Node.js             |
-| **Email**           | Nodemailer          |
-| **CI/CD**           | GitHub Actions      |
-| **Authentication**  | OAuth2 (Strava API) |
-| **Version Control** | Git & GitHub        |
+| Category            | Technology        |
+| ------------------- | ----------------- |
+| **Backend**         | Node.js           |
+| **API Integration** | Strave API, OAuth |
+| **Email**           | Nodemailer        |
+| **Automation**      | GitHub Actions    |
+| **Version Control** | Git & GitHub      |
 
 ---
 
