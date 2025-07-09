@@ -1,0 +1,35 @@
+name: Kudos Bot
+
+on:
+  schedule:
+    - cron: "0 */72 * * *" # every 72 hours
+  workflow_dispatch:
+
+jobs:
+  run-strava-kudos-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Create token.json
+        run: |
+          echo '${{ secrets.TOKEN_JSON }}' > token.json
+
+      - name: Run the script
+        run: node getLatestActivity.js
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_RECEIVER: ${{ secrets.EMAIL_RECEIVER }}
