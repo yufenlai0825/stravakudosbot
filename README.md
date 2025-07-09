@@ -1,4 +1,4 @@
-# 🎽 Strava Kudos Bot – Automated Kudos Notification App
+# 🤖 Strava Kudos Bot – Automated Kudos Notification App
 
 **Strava Kudos Bot** is an automated tool that monitors your public/private Strava account for new activities. It automatically sends a friendly reminder to your friends asking for some love when your latest workout has less than 10 kudos. 🥺
 
