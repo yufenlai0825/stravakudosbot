@@ -2,6 +2,8 @@ const env = require("dotenv");
 const nodemailer = require("nodemailer");
 env.config();
 
+const receivers = process.env.EMAIL_RECEIVER.split(",");
+
 async function sendEmail(msg) {
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -13,7 +15,8 @@ async function sendEmail(msg) {
   try {
     await transporter.sendMail({
       from: `"Kudos Bot" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_RECEIVER,
+      to: "",
+      bcc: receivers,
       subject: "Your Kudos Bot is here!🤖",
       text: msg,
     });
