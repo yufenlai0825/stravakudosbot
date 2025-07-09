@@ -4,7 +4,7 @@
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Strava](https://img.shields.io/badge/Strava-E04E39?style=for-the-badge&logo=strava&logoColor=white)
-![Nodemailer](https://img.shields.io/badge/Nodemailer-E6F6E6?style=for-the-badge&logo=nodemailer&logoColor=white)  
+![Nodemailer](https://img.shields.io/badge/Nodemailer-E6F6E6?style=for-the-badge&logo=nodemailer&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-000000.svg?style=for-the-badge&logo=render&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
@@ -57,18 +57,17 @@ Create a .env file in the root directory with the following keys:
 CLIENT_ID=               # Your Strava Client ID
 CLIENT_SECRET=           # Your Strava Client Secret
 ACCESS_TOKEN=            # Your Strava Access Token
-REFRESH_TOKEN=            # Your Strava Refresh Token
-EMAIL_USER=                 # Your Email
-EMAIL_PASSWORD=     # Your Email App Password
-EMAIL_RECEIVER=        # Email addresses to send
+REFRESH_TOKEN=           # Your Strava Refresh Token
+EMAIL_USER=              # Your Email
+EMAIL_PASSWORD=          # Your Email App Password
+EMAIL_RECEIVER=          # Email addresses to send
 ```
 
 ---
 
 ## ⚙️ Notes for Deployment
 
-- This project relies on a GitHub Actions workflow to run the Kudos Bot automatically on schedule.
-- Remember to set the secrets inside repository.
+- This project relies on a GitHub Actions workflow to run the Kudos Bot automatically on schedule. Therefore, you need to set the secrets inside your repository.
 - For local testing, you can run the app after creating a .env file with your credentials.
 
 ---
