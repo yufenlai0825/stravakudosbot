@@ -2,7 +2,7 @@ name: Kudos Bot
 
 on:
   schedule:
-    - cron: "0 0 * * *" # every 24 hours
+    - cron: "0 11 * * *" # 1pm CEST = UTC + 2
   workflow_dispatch:
 
 jobs:
