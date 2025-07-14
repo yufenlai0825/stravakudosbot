@@ -46,7 +46,7 @@ async function getLatestActivity() {
     console.log(`Activity: ${activity.name}, ID: ${activityId}`);
     console.log(`Kudos: ${activity.kudos_count}`);
 
-    if (activity.kudos_count < 10) {
+    if (activity.kudos_count < 30) {
       const messages = [
         "Hey! Just posted a workout — show me some love 🥺",
         "👟 Someone's crushing goals in silence... go check it out!",
@@ -66,7 +66,7 @@ async function getLatestActivity() {
       fs.writeFileSync(notifiedPath, JSON.stringify(notified, null, 2));
       console.log(`Saved activity ${activityId} to list.`);
     } else {
-      console.log(`At least 10 Kudos checked!`);
+      console.log(`At least 30 Kudos checked!`);
     }
   } catch (err) {
     console.error(
